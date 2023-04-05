@@ -13,32 +13,22 @@ body {
 a {
   color: black;
   transition: color .3s, text-shadow 1s;
-
 }
 * {
   margin: 0;
   padding: 0;
-
-  overflow: -moz-scrollbars-none;
-  scrollbar-width: none !important;
-  -ms-overflow-style: none;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
 
-*::-webkit-scrollbar {
-  display: none !important;
-  display: none;
-  width: 0 !important;
-}
 
 .video-crop {
   position: relative;
   overflow: hidden;
-  width: calc(100% - 50px);
+  width: calc(98vw - 1rem);
   aspect-ratio: 16 / 9;
-  border: 2px solid #283f77;
-  box-shadow: 0px 16px 55px -18px rgba(146, 208, 248, 0.5), inset 0px 0px 12px 6px rgba(146, 208, 248, 0.5);
+  border: 3px solid #283f77;
+  box-shadow: 
+          0px 16px 55px -18px rgba(146, 208, 248, 0.5), 
+    inset 0px 0px 12px 6px rgba(146, 208, 248, 0.5);
   border-radius: 15px;
   background-image: url("/bg.jpg");
   background-size: cover;
@@ -46,14 +36,17 @@ a {
 }
 
 .video-container {
-  width: calc(100vw - 1rem);
-  aspect-ratio: 16 / 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: -12px;
-  left: -10px;
+  overflow: hidden;
+
+  --pad-t : 10px;
+  --pad-r : 26px;
+  --pad-b : 17px;
+  --pad-l : 10px;
+  clip-path: inset(  var(--pad-t) var(--pad-r) var(--pad-b) var(--pad-l));
+  width: calc(100% + var(--pad-l) + var(--pad-r));
+  height: calc(100% + var(--pad-t) + var(--pad-b));
+  margin-left: calc( var(--pad-l) * -1);
+  margin-top: calc( var(--pad-t) * -1);
 }
 
 
