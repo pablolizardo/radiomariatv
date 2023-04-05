@@ -5,10 +5,15 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: black;
   background: radial-gradient(100% 100% at 50.04% 0%, #4c9dd0 0%, #283f77 100%)
     /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 }
-html {
+a {
+  color: black;
+  transition: color .3s, text-shadow 1s;
+
 }
 * {
   margin: 0;
@@ -32,7 +37,7 @@ html {
   overflow: hidden;
   width: calc(100% - 50px);
   aspect-ratio: 16 / 9;
-  border: 4px solid #283f77;
+  border: 2px solid #283f77;
   box-shadow: 0px 16px 55px -18px rgba(146, 208, 248, 0.5), inset 0px 0px 12px 6px rgba(146, 208, 248, 0.5);
   border-radius: 15px;
   background-image: url("/bg.jpg");
@@ -49,4 +54,43 @@ html {
   position: relative;
   top: -12px;
   left: -10px;
+}
+
+
+.logo {
+  position: fixed;
+  top: 3rem;
+  right: 0;
+  left: 0;
+  margin: auto;
+  pointer-events: none;
+  z-index: 20;
+}
+
+@media screen and (min-width: 500px) {
+  .logo {
+    margin-right: 0;
+    position: fixed;
+    top: 3rem;
+    right: 3rem;
+    pointer-events: none;
+    z-index: 20;
+  }
+  
+}
+
+.footer {
+  font-size: .85rem;
+  position: fixed;
+  bottom: 0; left:0; right: 0;
+  padding: 1rem;
+  text-align: center;
+  z-index: 20;
+  margin : auto;
+  background:  radial-gradient(48.77% 97.73% at 50% 100%, rgba(146, 208, 248, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+  max-width: 80ch;
+}
+a:hover {
+  color : white;
+  text-shadow: 0px 0px 32px rgba(146, 208, 248, 1);
 }
